@@ -16,7 +16,7 @@ import app.web.nakama.model.LoginForm;
 import app.web.nakama.service.IUserService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://nakama-0.web.app")
 public class UserController {
 
     @Autowired
