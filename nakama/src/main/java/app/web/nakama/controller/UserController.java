@@ -30,11 +30,12 @@ public class UserController {
     @PostMapping("/login")
     public ResponseEntity<String> login(@RequestBody LoginForm loginForm) {
         // Validar el nombre de usuario y contraseña
-        if (loginForm.getUsername().equals("Kbe") && loginForm.getPassword().equals("Admin")) {
+        List<User> listaUsers = iuserService.getUsers();
+        for (User usuario : listaUsers) {
+            if (loginForm.getUsername().equals(usuario.getUsername()) && loginForm.getPassword().equals(usuario.getPassword())) {
             return ResponseEntity.ok("Inicio de sesión exitoso");
-        } else {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Credenciales inválidas");
-        }
+        }}
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Credenciales inválidas");
     }
 }
 
