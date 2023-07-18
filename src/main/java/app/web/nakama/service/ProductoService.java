@@ -10,6 +10,7 @@ import app.web.nakama.repository.ProductoRepository;
 
 @Service
 public class ProductoService implements IProductoService {
+    
     @Autowired
     private ProductoRepository prodRepo;
 
